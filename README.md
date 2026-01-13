@@ -24,7 +24,7 @@ Sistema de Gestión de Tareas Jerárquicas y Lista de Verificación.
     docker-compose exec laravel php artisan migrate:fresh --seed
   ```
 
-    *Nota: El comando `--seed` creará usuarios y datos de prueba automáticamente.*
+    *Nota: El comando `--seed` creará usuarios y datos de prueba automáticamente. Si falla la primera vez volver a ejecutar el comando*
 5. **Instalar dependencias de frontend (vue.js)**
   ```bash
     docker compose exec frontend npm install
