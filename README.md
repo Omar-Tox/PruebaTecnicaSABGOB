@@ -11,7 +11,7 @@ Sistema de Gestión de Tareas Jerárquicas y Lista de Verificación.
 * WSL (Ubuntu 24.04.1 LTS)
 * Git
 
-* 1. Clonar el repositorio desde WSLy entrar a la carpeta del repositorio
+* 1. Clonar el repositorio desde WSL (Ubuntu) y entrar a la carpeta del repositorio
   2. **Levantar el contenedor:**
      ```bash
      docker-compose up -d --build
