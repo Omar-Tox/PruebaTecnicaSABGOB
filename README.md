@@ -18,17 +18,18 @@ Sistema de Gestión de Tareas Jerárquicas y Lista de Verificación.
      docker-compose up -d --build
 ```
   *Nota: Esperar unos segundos*
-3.**LLenado de prueba Backend (Laravel):**
+
+4. **LLenado de prueba Backend (Laravel):**
   ```bash
     docker-compose exec laravel php artisan migrate:fresh --seed
   ```
 
     *Nota: El comando `--seed` creará usuarios y datos de prueba automáticamente.*
-  4. **Instalar dependencias de frontend (vue.js)**
+5. **Instalar dependencias de frontend (vue.js)**
   ```bash
     docker compose exec frontend npm install
   ```
-  4.  **Acceder a la aplicación:**
+6.  **Acceder a la aplicación:**
     * **Frontend:** [http://localhost:5173](http://localhost:5173)
     * **Backend API:** [http://localhost:8000](http://localhost:8000)
 
