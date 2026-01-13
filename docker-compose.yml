@@ -24,8 +24,6 @@ services:
     ports:
       - '8000:8000'
     user: root
-    entrypoint: []  
-    command: bash -c "php artisan serve --host=0.0.0.0 --port=8000"
     environment:
       - DB_HOST=mariadb
       - DB_PORT=3306
@@ -39,6 +37,14 @@ services:
       - mariadb
     networks:
       - laravel_net
+    command: >
+      bash -c "
+      if [ ! -d vendor ]; then
+        composer install --no-interaction --prefer-dist;
+      fi &&
+      php artisan serve --host=0.0.0.0 --port=8000
+      "
+
 
   frontend:
     image: node:20-alpine

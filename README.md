@@ -17,10 +17,8 @@ Sistema de Gestión de Tareas Jerárquicas y Lista de Verificación.
 ```bash
      docker-compose up -d --build
 ```
-3.**Instalar dependencias de Backend (Laravel):**
+3.**LLenado de prueba Backend (Laravel):**
   ```bash
-    docker-compose exec laravel composer install
-    docker-compose exec laravel php artisan key:generate
     docker-compose exec laravel php artisan migrate --seed
   ```
 
