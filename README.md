@@ -12,7 +12,7 @@ Sistema de Gestión de Tareas Jerárquicas y Lista de Verificación.
 * Git
 
 1. Clonar el repositorio desde WSL (Ubuntu) y entrar a la carpeta del repositorio
-2. Descargar y pegar el .env en la carpeta mylaravel
+2. Descargar, pegar el .env (laravel) y renombrarlo a .env en la carpeta mylaravel
 3. **Levantar el contenedor:**
 ```bash
      docker-compose up -d --build
