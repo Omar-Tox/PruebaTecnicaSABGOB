@@ -11,7 +11,7 @@ Sistema de Gestión de Tareas Jerárquicas y Lista de Verificación.
 * WSL (Ubuntu 24.04.1 LTS)
 * Git
 
-* 1. Clonar el repositorio desde WSL (Ubuntu) y entrar a la carpeta del repositorio
+  1. Clonar el repositorio desde WSL (Ubuntu) y entrar a la carpeta del repositorio
   2. **Levantar el contenedor:**
      ```bash
      docker-compose up -d --build
@@ -22,6 +22,7 @@ Sistema de Gestión de Tareas Jerárquicas y Lista de Verificación.
     docker-compose exec laravel php artisan key:generate
     docker-compose exec laravel php artisan migrate --seed
   ```
+
     *Nota: El comando `--seed` creará usuarios y datos de prueba automáticamente.*
   4. **Instalar dependencias de frontend (vue.js)**
   ```bash
