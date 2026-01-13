@@ -5,8 +5,8 @@ import { RouterLink } from 'vue-router'
 import Swal from 'sweetalert2'
 
 const authStore = useAuthStore()
-const email = ref('zmraz@example.net')
-const password = ref('password')
+const email = ref('')
+const password = ref('')
 const isLoading = ref(false)
 
 // Configuración de Toast (Notificación pequeña)
