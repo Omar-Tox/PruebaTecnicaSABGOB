@@ -1,0 +1,61 @@
+services:
+  mariadb:
+    image: bitnami/mariadb:latest
+    container_name: mariadb_project
+    restart: unless-stopped
+    ports:
+      - '3306:3306'
+    environment:
+      - MARIADB_USER=bn_laravel
+      - MARIADB_PASSWORD=bitnami
+      - MARIADB_DATABASE=bitnami_laravel
+      - MARIADB_ROOT_PASSWORD=root_password
+      - MARIADB_CHARACTER_SET=utf8mb4
+      - MARIADB_COLLATE=utf8mb4_unicode_ci
+    volumes:
+      - 'mariadb_data:/bitnami/mariadb'
+    networks:
+      - laravel_net
+
+  laravel:
+    image: bitnami/laravel:latest
+    container_name: laravel_project
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    user: root
+    entrypoint: []  
+    command: bash -c "php artisan serve --host=0.0.0.0 --port=8000"
+    environment:
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=bn_laravel
+      - DB_PASSWORD=bitnami
+      - DB_DATABASE=bitnami_laravel
+      - SKIP_COMPOSER_UPDATE=yes
+    volumes:
+      - './mylaravel/src:/app'
+    depends_on:
+      - mariadb
+    networks:
+      - laravel_net
+
+  frontend:
+    image: node:20-alpine
+    container_name: vue_project
+    working_dir: /app
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    command: sh -c "npm install && npm run dev -- --host"
+    networks:
+      - laravel_net
+
+volumes:
+  mariadb_data:
+    driver: local
+
+networks:
+  laravel_net:
+    driver: bridge
